@@ -1,6 +1,6 @@
 import discord
 
-import main
+import Getinfo
 
 client = discord.Client()
 token = 'NzEwNDg0NTQzOTM2NjU5NTU4.Xr1ISw.rPDaWUczXHn0xygGyIoOU8vmpQU'
@@ -14,7 +14,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith('!url '):
-        ip_info = main.main_function(message.content[5:])
+        ip_info = GetInfo.main_function(message.content[5:])
         data = f"""ip: {ip_info['ip']}\n
                 region: {ip_info['region']}\n
                 country: {ip_info['country']}\n
